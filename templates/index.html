@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}ToDo – Strona główna{% endblock %}
+{% block content %}
+<form action='{{ url_for('add') }}' method='post' class='row'>
+  <input type='text' name='title' placeholder='Nowe zadanie…' autofocus>
+  <button type='submit'>Dodaj</button>
+</form>
+{% if tasks %}
+  <ul class='tasks'>
+  {% for t in tasks %}
+    <li><span>{{ t }}</span>
+      <form action='{{ url_for('delete', idx=loop.index0) }}' method='post'>
+        <button type='submit' class='danger'>Usuń</button>
+      </form>
+    </li>
+  {% endfor %}
+  </ul>
+{% else %}
+  <p>Brak zadań. Dodaj pierwsze powyżej.</p>
+{% endif %}
+{% endblock %}

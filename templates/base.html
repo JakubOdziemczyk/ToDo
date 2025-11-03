@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang='pl'>
+<head>
+  <meta charset='utf-8'>
+  <title>{% block title %}ToDo – Flask{% endblock %}</title>
+  <link rel='stylesheet' href='{{ url_for('static', filename='style.css') }}'>
+</head>
+<body>
+<header><h1>Lista zadań (Flask)</h1></header>
+<main>
+{% with msgs = get_flashed_messages() %}
+  {% if msgs %}
+  <ul class='flash'>
+    {% for m in msgs %}<li>{{ m }}</li>{% endfor %}
+  </ul>
+  {% endif %}
+{% endwith %}
+{% block content %}{% endblock %}
+</main>
+<footer><small>Demo edukacyjne – Flask</small></footer>
+</body>
+</html>
