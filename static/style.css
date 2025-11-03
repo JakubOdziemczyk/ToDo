@@ -1,0 +1,11 @@
+body { font-family: system-ui, sans-serif; margin: 2rem; }
+header h1 { margin-bottom: 1rem; }
+.row { display: flex; gap: .5rem; margin-bottom: 1rem; }
+input[type='text'] { flex: 1; padding: .5rem; }
+button { padding: .5rem .8rem; cursor: pointer; }
+button.danger { background: #eee; }
+.tasks { list-style: none; padding: 0; display: grid; gap: .5rem; }
+.tasks li { display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; border-radius: .5rem; padding: .5rem; }
+.flash { list-style: none; padding: 0; margin: 0 0 1rem; }
+.flash li { background: #f1f5ff; border: 1px solid #cfe0ff; padding: .4rem .6rem; border-radius: .4rem; }
+footer { margin-top: 2rem; color: #666; }

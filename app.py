@@ -33,6 +33,15 @@ def delete(idx):
         flash('Nieprawidłowy indeks zadania.')
     return redirect(url_for('index'))
 
+@app.route('/edit/<int:idx>', methods=['POST'])
+def edit(idx):
+    if 0 <= idx < len(tasks):
+        tasks[idx] = request.form['task']
+        flash('Zedytowano zadanie.')
+    else:
+        flash('Nieprawidłowy indeks zadania.')
+    return redirect(url_for('index'))
+
 @app.errorhandler(404)
 def not_found(e):
     return render_template('404.html'), 404
